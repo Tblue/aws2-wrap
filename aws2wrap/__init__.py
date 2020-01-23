@@ -97,6 +97,7 @@ def get_role_credentials(profile_name, sso_role_name, sso_account_id, sso_access
     result = subprocess.run(
         [
             "aws2", "sso", "get-role-credentials",
+            "--output", "json",
             "--profile", profile_name,
             "--role-name", sso_role_name,
             "--account-id", sso_account_id,
